@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Freelance Jobs</title>
+    <link rel="stylesheet" href="suilanceApply.css">
+</head>
+<body>
+    <header>
+        <h1>Web3 Freelance Platform</h1>
+        <input type="text" id="search" placeholder="Search for jobs...">
+    </header>
+    <main>
+        <section id="job-listings">
+            <div class="job-card" onclick="applyForJob('Frontend Developer')">
+                <h2>Frontend Developer</h2>
+                <p>Company XYZ - Remote</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card" onclick="applyForJob('Blockchain Engineer')">
+                <h2>Blockchain Engineer</h2>
+                <p>Company ABC - Remote</p>
+                <button>Apply Now</button>
+            </div>
+            <!-- More job cards -->
+        </section>
+        <section id="apply-section" class="hidden">
+            <h2>Apply for <span id="job-title"></span></h2>
+            <form id="application-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Why are you a good fit?" required></textarea>
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+    </main>
+    <script src="suilanceApplyy.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suilance Earn</title>
+    <link rel="stylesheet" href="suilanceEarn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="suilance.png" alt="Suilance Logo">
+        </div>
+        <nav class="navigation">
+            <a href="#" class="active">Home</a>
+            <a href="#">News</a>
+            <a href="#">Notifications</a>
+            <a href="#">Settings</a>
+        </nav>
+        <button class="connectWalletBtn">Connect Wallet</button>
+    </div>
+    
+
+    <main>
+        <section class="dashboard">
+            <h2>Welcome, Sele!</h2>
+            <div class="stats">
+                <div class="stat-item"><h3>15</h3><p>Submissions</p></div>
+                <div class="stat-item"><h3>6</h3><p>Wins</p></div>
+                <div class="stat-item"><h3>20</h3><p>Followers</p></div>
+            </div>
+        </section>
+
+        <section class="job-listings">
+            <div class="filter">
+                <button class="filter-button" onclick="toggleFilter(this)">All Jobs</button>
+            </div>
+            <div class="jobs">
+                <div class="job-card" onmouseover="highlightCard(this)" onmouseout="unhighlightCard(this)">
+                    <div class="job-image"></div>
+                    <div class="job-details">
+                        <h4>Mysten Labs</h4>
+                        <p>Bounty | Ends in 2hr 13min</p>
+                        <p>45 submissions</p>
+                    </div>
+                    <div class="job-actions">
+                        <span class="reward">200 USDC</span>
+                        <button class="apply-button">Apply</button>
+                    </div>
+                </div>
+
+                <div class="job-card" onmouseover="highlightCard(this)" onmouseout="unhighlightCard(this)">
+                    <div class="job-image"></div>
+                    <div class="job-details">
+                        <h4>Mysten Labs</h4>
+                        <p>Bounty | Ends in 2hr 13min</p>
+                        <p>45 submissions</p>
+                    </div>
+                    <div class="job-actions">
+                        <span class="reward">200 USDC</span>
+                        <button class="apply-button">Apply</button>
+                    </div>
+                </div>
+
+                <div class="job-card" onmouseover="highlightCard(this)" onmouseout="unhighlightCard(this)">
+                    <div class="job-image"></div>
+                    <div class="job-details">
+                        <h4>Mysten Labs</h4>
+                        <p>Bounty | Ends in 2hr 13min</p>
+                        <p>45 submissions</p>
+                    </div>
+                    <div class="job-actions">
+                        <span class="reward">200 USDC</span>
+                        <button class="apply-button">Apply</button>
+                    </div>
+                </div>
+
+                <div class="job-card" onmouseover="highlightCard(this)" onmouseout="unhighlightCard(this)">
+                    <div class="job-image"></div>
+                    <div class="job-details">
+                        <h4>Mysten Labs</h4>
+                        <p>Bounty | Ends in 2hr 13min</p>
+                        <p>45 submissions</p>
+                    </div>
+                    <div class="job-actions">
+                        <span class="reward">200 USDC</span>
+                        <button class="apply-button">Apply</button>
+                    </div>
+                </div>
+                <!-- Repeat for more job cards -->
+            </div>
+        </section>
+
+        <section class="winners">
+            <h3>Winners</h3>
+            <div class="winner-container">
+                <div class="winner-card"><p>Sele Odigie</p><span>2500 USDC</span><p>Thread Contest</p></div>
+                <!-- Repeat for more winner cards -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2 class="footer-logo">
+                <div class="logo">
+                    <img src="suilance.png" alt="Suilance Logo">
+                </div>
+            </h2>
+            <p class="footer-description">With Suilance, Web3 freelancers can do tasks and get paid in cryptocurrency.</p>
+            <button class="subscribe-button">Subscribe to Newsletter</button>
+        </div>
+
+        <div class="footer-section">
+            <h3>About</h3>
+            <ul>
+                <li><a href="#">Docs</a></li>
+                <li><a href="#">Earn</a></li>
+                <li><a href="#">Investors</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Socials</h3>
+            <ul>
+                <li><a href="#"><i class="fab fa-twitter"></i> X</a></li>
+                <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+                <li><a href="#"><i class="fab fa-telegram"></i> Telegram</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Email</a></li>
+                <li><a href="#"><i class="fas fa-headset"></i> Support</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <div class="footer-bottom">
+        <p><a href="#">Terms of Use</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p>&copy; 2024 Suilance. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Footer Section -->
+
+<script>
+    async function connectSuiWallet() {
+        if (window.suiWallet) {
+            try {
+                const response = await window.suiWallet.request({ method: "sui_connect" });
+                console.log("Connected to Sui Wallet:", response);
+            } catch (error) {
+                console.error("Failed to connect to wallet:", error);
+            }
+        } else {
+            alert("Sui Wallet not found. Please install a Sui-compatible wallet extension.");
+        }
+    }
+
+    document.querySelector(".connectWalletBtn").addEventListener("click", connectSuiWallet);
+</script>
+
+
+
+
+    <script src="suilanceEarn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+</body>
+</html>
